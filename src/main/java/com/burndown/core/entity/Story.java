@@ -1,5 +1,6 @@
 package com.burndown.core.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.data.relational.core.mapping.Table;
@@ -48,15 +49,15 @@ public class Story {
 	
 	private int storypoints;
 	
-	private Date creationDate;
+	private LocalDate creationDate;
 	
-	private Date closingDate;
+	private LocalDate closingDate;
 	
 	private boolean done;
 	
 
 	public Story(Long id, String description, User creator, User assigne, SprintBacklog sprintbacklog,
-			ProducktBacklog produktbacklog, int storypoints, Date creationDate, Date closingDate, boolean done) {
+			ProducktBacklog produktbacklog, int storypoints, LocalDate localDate, LocalDate localDate2, boolean done) {
 		super();
 		this.id = id;
 		this.description = description;
@@ -65,10 +66,11 @@ public class Story {
 		this.sprintbacklog = sprintbacklog;
 		this.produktbacklog = produktbacklog;
 		this.storypoints = storypoints;
-		this.creationDate = creationDate;
-		this.closingDate = closingDate;
+		this.creationDate = localDate;
+		this.closingDate = localDate2;
 		this.done = done;
 	}
+	
 	
 	public Story() {}
 
@@ -136,19 +138,19 @@ public class Story {
 		this.storypoints = storypoints;
 	}
 
-	public Date getCreationDate() {
+	public LocalDate getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(LocalDate creationDate) {
 		this.creationDate = creationDate;
 	}
 
-	public Date getClosingDate() {
+	public LocalDate getClosingDate() {
 		return closingDate;
 	}
 
-	public void setClosingDate(Date closingDate) {
+	public void setClosingDate(LocalDate closingDate) {
 		this.closingDate = closingDate;
 	}
 	

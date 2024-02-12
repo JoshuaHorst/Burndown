@@ -8,34 +8,32 @@ import com.burndown.core.entity.Story;
 public class SprintBacklogDto {
 
 		private Long id;
-		
-		private Set<Story> story;
-		
-		private Sprint sprint;
+		private Set<StoryDto> story;
+		private SprintDto sprint;
 
-		public SprintBacklogDto(Sprint sprint) {
+		public SprintBacklogDto(SprintDto sprint) {
 			super();
 			this.sprint = sprint;
 		}
 
-		public SprintBacklogDto(Long id, Set<Story> story, Sprint sprint) {
+		public SprintBacklogDto(Long id, Set<StoryDto> story, SprintDto sprint) {
 			super();
 			this.id = id;
 			this.story = story;
 			this.sprint = sprint;
 		}
 
-		public SprintBacklogDto(Set<Story> story, Sprint sprint) {
+		public SprintBacklogDto(Set<StoryDto> story, SprintDto sprint) {
 			super();
 			this.story = story;
 			this.sprint = sprint;
 		}
 
-		public Sprint getSprint() {
+		public SprintDto getSprint() {
 			return sprint;
 		}
 
-		public void setSprint(Sprint sprint) {
+		public void setSprint(SprintDto sprint) {
 			this.sprint = sprint;
 		}
 
@@ -47,11 +45,11 @@ public class SprintBacklogDto {
 			this.id = id;
 		}
 
-		public Set<Story> getStory() {
+		public Set<StoryDto> getStory() {
 			return story;
 		}
 
-		public void setStory(Set<Story> story) {
+		public void setStory(Set<StoryDto> story) {
 			this.story = story;
 		}
 		

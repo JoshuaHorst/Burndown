@@ -11,16 +11,18 @@ import com.burndown.dto.SprintDto;
 @Service
 public class SprintBacklogFactory {
 	
+	SpringFactory sprintFacoty;
+	
 	public SprintBacklog toEntity(SprintBacklogDto dto){
 		if(dto.getId()!=null) {
-			return new SprintBacklog(dto.getId(), dto.getSprint(), dto.getStory());
+			return new SprintBacklog(dto.getId(), sprintFacoty.toEntity(dto.getSprint()), null);
 		}else {
-			return new SprintBacklog(dto.getStory(), dto.getSprint());
+			return new SprintBacklog(null, sprintFacoty.toEntity(dto.getSprint()));
 		}
 	}
 	
 	public SprintBacklogDto toDto(SprintBacklog sprintbacklog) {
-		return new SprintBacklogDto(sprintbacklog.getId(), sprintbacklog.getStory(), sprintbacklog.getSprint());
+		return new SprintBacklogDto(sprintbacklog.getId(), null, sprintFacoty.toDto(sprintbacklog.getSprint()));
 		
 	}
 	

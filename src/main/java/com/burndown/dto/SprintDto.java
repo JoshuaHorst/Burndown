@@ -8,15 +8,12 @@ import com.burndown.core.entity.User;
 public class SprintDto {
 	
 	private Long id;
-	
 	private Date start;
-	
 	private Date end;
-
-	private User creator;
+	private UserDto creator;
 	
 	
-	public SprintDto(Long id, Date start, Date end, User creator) {
+	public SprintDto(Long id, Date start, Date end, UserDto creator) {
 		this.id = id;
 		this.start = start;
 		this.end = end;
@@ -47,11 +44,11 @@ public class SprintDto {
 		this.end = end;
 	}
 
-	public User getCreator() {
+	public UserDto getCreator() {
 		return creator;
 	}
 
-	public void setCreator(User creator) {
+	public void setCreator(UserDto creator) {
 		this.creator = creator;
 	}
 	

@@ -21,7 +21,7 @@ public class PersonalDataRestController {
 	@Autowired
 	private PersonalDataApplication personalDataApplication;
 	
-	@GetMapping("/get/{id}")
+	/*@GetMapping("/get/{id}")
 	public ResponseEntity<PersonalData> getPersonalDataByID(@PathVariable(value = "id") Long id){
 		
 		PersonalData personalData = personalDataApplication.getPersonalDataByID(id);
@@ -34,7 +34,7 @@ public class PersonalDataRestController {
 				      null, HttpStatus.BAD_REQUEST);
 		}
 		
-	}
+	}*/
 	
 	@GetMapping("/get")
 	public ResponseEntity<Iterable<PersonalData>> getPersonalData(){

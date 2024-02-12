@@ -1,18 +1,9 @@
 package com.burndown.dto;
 
 import java.util.Date;
-
-import org.springframework.stereotype.Service;
-
 import com.burndown.core.entity.ProducktBacklog;
 import com.burndown.core.entity.SprintBacklog;
 import com.burndown.core.entity.User;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 
 public class StoryDto {
@@ -20,18 +11,18 @@ public class StoryDto {
 	private Long id;
 	
 	private String description;
-	private User creator;
-	private User assigne;
-	private SprintBacklog sprintbacklog;
-	private ProducktBacklog produktbacklog;
+	private UserDto creator;
+	private UserDto assigne;
+	private Long sprintbacklog;
+	private Long produktbacklog;
 	private int storypoints;
-	private Date creationDate;
-	private Date closingDate;
+	private String creationDate;
+	private String closingDate;
 	private boolean done;
-	
-	
-	public StoryDto(Long id, String description, User creator, User assigne, SprintBacklog sprintbacklog,
-			ProducktBacklog produktbacklog, int storypoints, Date creationDate, Date closingDate, boolean done) {
+
+
+	public StoryDto(Long id, String description, UserDto creator, UserDto assigne, Long sprintbacklog,
+			Long produktbacklog, int storypoints, String creationDate, String closingDate, boolean done) {
 		super();
 		this.id = id;
 		this.description = description;
@@ -44,10 +35,9 @@ public class StoryDto {
 		this.closingDate = closingDate;
 		this.done = done;
 	}
-
-
-	public StoryDto(String description, User creator, User assigne, SprintBacklog sprintbacklog,
-			ProducktBacklog produktbacklog, int storypoints, Date creationDate, Date closingDate, boolean done) {
+	
+	public StoryDto( String description, UserDto creator, UserDto assigne, Long sprintbacklog,
+			Long produktbacklog, int storypoints, String creationDate, String closingDate, boolean done) {
 		super();
 		this.description = description;
 		this.creator = creator;
@@ -59,7 +49,18 @@ public class StoryDto {
 		this.closingDate = closingDate;
 		this.done = done;
 	}
+	
+	public StoryDto(Long id, String description, int storypoints, boolean done) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.storypoints = storypoints;
+		this.done = done;
+	}
 
+	public StoryDto() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
@@ -81,46 +82,6 @@ public class StoryDto {
 	}
 
 
-	public User getCreator() {
-		return creator;
-	}
-
-
-	public void setCreator(User creator) {
-		this.creator = creator;
-	}
-
-
-	public User getAssigne() {
-		return assigne;
-	}
-
-
-	public void setAssigne(User assigne) {
-		this.assigne = assigne;
-	}
-
-
-	public SprintBacklog getSprintbacklog() {
-		return sprintbacklog;
-	}
-
-
-	public void setSprintbacklog(SprintBacklog sprintbacklog) {
-		this.sprintbacklog = sprintbacklog;
-	}
-
-
-	public ProducktBacklog getProduktbacklog() {
-		return produktbacklog;
-	}
-
-
-	public void setProduktbacklog(ProducktBacklog produktbacklog) {
-		this.produktbacklog = produktbacklog;
-	}
-
-
 	public int getStorypoints() {
 		return storypoints;
 	}
@@ -131,22 +92,22 @@ public class StoryDto {
 	}
 
 
-	public Date getCreationDate() {
+	public String getCreationDate() {
 		return creationDate;
 	}
 
 
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(String creationDate) {
 		this.creationDate = creationDate;
 	}
 
 
-	public Date getClosingDate() {
+	public String getClosingDate() {
 		return closingDate;
 	}
 
 
-	public void setClosingDate(Date closingDate) {
+	public void setClosingDate(String closingDate) {
 		this.closingDate = closingDate;
 	}
 
@@ -158,6 +119,38 @@ public class StoryDto {
 
 	public void setDone(boolean done) {
 		this.done = done;
+	}
+
+	public UserDto getCreator() {
+		return creator;
+	}
+
+	public void setCreator(UserDto creator) {
+		this.creator = creator;
+	}
+
+	public UserDto getAssigne() {
+		return assigne;
+	}
+
+	public void setAssigne(UserDto assigne) {
+		this.assigne = assigne;
+	}
+
+	public Long getSprintbacklog() {
+		return sprintbacklog;
+	}
+
+	public void setSprintbacklog(Long sprintbacklog) {
+		this.sprintbacklog = sprintbacklog;
+	}
+
+	public Long getProduktbacklog() {
+		return produktbacklog;
+	}
+
+	public void setProduktbacklog(Long produktbacklog) {
+		this.produktbacklog = produktbacklog;
 	}
 	
 	

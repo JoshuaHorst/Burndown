@@ -12,6 +12,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 @Table(name="sprint")
@@ -31,8 +33,12 @@ public class Sprint {
 	@JsonBackReference
 	private User creator;
 	
+    @OneToOne
+    @PrimaryKeyJoinColumn
+	private SprintBacklog sprintBacklog;
 	
 	
+    
 	public Sprint(Date start, Date end, User creator) {
 		this.start = start;
 		this.end = end;

@@ -30,7 +30,7 @@ public class User {
     @Column(name = "id")
 	private Long id;
 	
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne
     @PrimaryKeyJoinColumn
 	private PersonalData personalData;
 	
@@ -62,7 +62,15 @@ public class User {
 		this.sprint = sprint;
 	}
 	
-	public User() {}
+
+	public User(Long id, PersonalData personalData, Role role) {
+		super();
+		this.id = id;
+		this.personalData = personalData;
+		this.role = role;
+	}
+	
+	public User(){}
 
 	public Long getId() {
 		return id;

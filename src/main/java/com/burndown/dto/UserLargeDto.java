@@ -24,10 +24,10 @@ public class UserLargeDto {
 	private String roleName;
 	private String permissions;
 	private String name;
-	private LocalDate birthday;
+	private String birthday;
 	
 	
-	public UserLargeDto(Long id, Long roleId, String roleName, String permissions, String name, LocalDate birthday) {
+	public UserLargeDto(Long id, Long roleId, String roleName, String permissions, String name, String birthday) {
 		this.id = id;
 		this.roleId = roleId;
 		this.roleName = roleName;
@@ -38,7 +38,7 @@ public class UserLargeDto {
 	
 
 	
-	public UserLargeDto( Long roleId, String roleName, String permissions, String name, LocalDate birthday) {
+	public UserLargeDto( Long roleId, String roleName, String permissions, String name, String birthday) {
 		this.roleId = roleId;
 		this.roleName = roleName;
 		this.permissions = permissions;
@@ -97,12 +97,12 @@ public class UserLargeDto {
 	}
 
 
-	public LocalDate getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
 
-	public void setBirthday(LocalDate birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 	

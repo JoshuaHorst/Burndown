@@ -11,7 +11,6 @@ public class RoleDto {
 	private Long id;
 	private String roleName;
 	private String permissions;
-	private Set<User> user;
 	
 	
 	
@@ -20,7 +19,6 @@ public class RoleDto {
 		this.id = id;
 		this.roleName = roleName;
 		this.permissions = permissions;
-		this.user = user;
 	}
 	
 	public RoleDto(Long id, String roleName, String permissions) {
@@ -38,16 +36,9 @@ public class RoleDto {
 		this.roleName = roleName;
 		this.permissions = permissions;
 	}
+	public RoleDto() {}
 
 
-
-
-	public Set<User> getUser() {
-		return user;
-	}
-	public void setUser(Set<User> user) {
-		this.user = user;
-	}
 	public Long getId() {
 		return id;
 	}

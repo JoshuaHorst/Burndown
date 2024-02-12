@@ -6,6 +6,12 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 import org.springframework.data.relational.core.mapping.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,7 +34,7 @@ public class PersonalData {
 	
 	private LocalDate birthday;
 	
-    @OneToOne
+    @OneToOne(mappedBy = "personalData")
     @MapsId
     @JoinColumn(name = "user_id")
 	private User user;
@@ -43,6 +49,12 @@ public class PersonalData {
 	
 	public PersonalData() {}
 	
+	public PersonalData(Long id, String name, LocalDate birthday) {
+		this.id = id;
+		this.name = name;
+		this.birthday = birthday;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -57,6 +69,22 @@ public class PersonalData {
 
 	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 	

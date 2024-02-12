@@ -2,29 +2,21 @@ package com.burndown.dto;
 
 import java.util.Set;
 
-import com.burndown.core.entity.Story;
-
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-
-
 public class ProduktBacklogDto {
 
 
 	private Long id;
 
-	private Set<Story> story;
+	private Set<StoryDto> story;
 	
 	private String name;
 	
-	public ProduktBacklogDto(Set<Story> story, String name) {
+	public ProduktBacklogDto(Set<StoryDto> story, String name) {
 		this.story = story;
 		this.name = name;
 	}
 	
-	public ProduktBacklogDto(Long id, Set<Story> story, String name) {
+	public ProduktBacklogDto(Long id, Set<StoryDto> story, String name) {
 
 		this.id = id;
 		this.story = story;
@@ -39,11 +31,11 @@ public class ProduktBacklogDto {
 		this.id = id;
 	}
 
-	public Set<Story> getStory() {
+	public Set<StoryDto> getStory() {
 		return story;
 	}
 
-	public void setStory(Set<Story> story) {
+	public void setStory(Set<StoryDto> story) {
 		this.story = story;
 	}
 
